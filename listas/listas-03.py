@@ -2,12 +2,9 @@
 # já na posição correta de inserção (sem usar o sort()). No final, mostre a lista ordenada na tela.
 
 lista = []
-maior = menor = 0
 for i in range(0,5):
     n = int(input('Digite um valor: '))
     if i == 0:
-        maior = n
-        menor = n
         lista.append(n)
         print('Adicionado ao final da lista...')
     elif n > lista[-1]:
