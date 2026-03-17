@@ -10,10 +10,12 @@ for i in range(0,7):
         n[0].append(valor)
     else:
         n[1].append(valor)
+n[0].sort()
 print('Os valores pares digitados foram: ',end='')
 for i in n[0]:
     print(i,end=' ')
 print()
+n[1].sort()
 print('Os valores ímpares digitados foram: ',end='')
 for i in n[1]:
     print(i,end=' ')
