@@ -10,11 +10,11 @@ while True:
         print('Valor adicionado com sucesso!')
     else:
         print('Valor duplicado, não vou adicionar!')
-    continuar = str(input('Deseja continuar? [S/N] ')).strip().upper()
-    while continuar != 'N' and continuar != 'S':
+    cont = str(input('Deseja continuar? [S/N] ')).strip().upper()
+    while cont != 'N' and cont != 'S':
         print('Opção inválida, digite novamente.')
-        continuar = str(input('Deseja continuar? [S/N] ')).strip().upper()
-    if continuar == 'N':
+        cont = str(input('Deseja continuar? [S/N] ')).strip().upper()
+    if cont == 'N':
         break
 valores.sort()
 print(f'Você digitou os valores: ',end='')

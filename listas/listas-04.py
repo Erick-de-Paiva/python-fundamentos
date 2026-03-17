@@ -7,10 +7,10 @@ lista = []
 while True:
     n = int(input('Digite um valor: '))
     lista.append(n)
-    escolha = str(input('Quer continuar? [S/N] ')).strip().upper()
-    while escolha != 'S' and escolha != 'N':
-        escolha = str(input('Opção inválida! Quer continuar? [S/N] ')).strip().upper()
-    if escolha == 'N':
+    cont = str(input('Quer continuar? [S/N] ')).strip().upper()
+    while cont != 'S' and cont != 'N':
+        cont = str(input('Opção inválida! Quer continuar? [S/N] ')).strip().upper()
+    if cont == 'N':
         break
 print(f'Você digitou {len(lista)} valores.')
 lista.sort(reverse=True)
