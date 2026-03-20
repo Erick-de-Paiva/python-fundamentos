@@ -1,44 +1,44 @@
-# Crie um programa que leia nome, sexo e idade de várias pessoas, guardando os dados de cada pessoa
-# em um dicionário e todos os dicionários em uma lista. No final, mostre:
-# A) Quantas pessoas foram cadastradas
-# B) A média de idade
-# C) Uma lista com as mulheres
-# D) Uma lista de pessoas com idade acima da média
+# Aprimore o desafio anterior para que ele funcione com vários jogadores,
+# incluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
 
-dados = {}
-pessoas = []
-totalPessoas = totalIdade = 0
-mulheres = []
-acimaMedia = []
+jogador = {}
+time = []
+partidas = []
+totalGols = 0
 while True:
-    dados['nome'] = str(input('Nome: '))
-    dados['sexo'] = str(input('Sexo [M/F]: ')).strip().upper()
-    while dados['sexo'] not in 'MF':
-        print('ERRO! Digite M ou F')
-        dados['sexo'] = str(input('Sexo [M/F]: ')).strip().upper()
-    if dados['sexo'] == 'F':
-        mulheres.append(dados['nome'])
-    dados['idade'] = int(input('Idade: '))
-    totalPessoas += 1
-    totalIdade += dados['idade']
-    pessoas.append(dados.copy())
-    cont = str(input('Deseja continuar [S/N]? ')).strip()
+    jogador.clear()
+    jogador['nome'] = str(input('Nome do jogador: '))
+    tot = int(input(f'Quantas partidas o {jogador['nome']} jogou? '))
+    partidas.clear()
+    for i in range(0,tot):
+        partidas.append(int(input(f'  Quantos gols na partida {i+1}? ')))
+    jogador['gols'] = partidas[:]
+    jogador['total'] = sum(partidas)
+    time.append(jogador.copy())
+    cont = str(input('Quer continuar [S/N]? ')).strip()
     while cont not in 'SsNn':
-        print('ERRO! Digite S ou N')
-        cont = str(input('Deseja continuar [S/N]? ')).strip()
+        print('ERRO! Digite novamente.')
+        cont = str(input('Quer continuar [S/N]? ')).strip()
     if cont in 'Nn':
         break
-mediaIdade = totalIdade / totalPessoas
-for p in pessoas:
-    if p['idade'] > mediaIdade:
-        acimaMedia.append(p)
-print(f'A) Ao todo temos {totalPessoas} pessoas cadastradas.')
-print(f'B) A média de idade é de {mediaIdade:.2f} anos.')
-print('C) As mulheres cadastradas foram: ',end='')
-for i in range(0,len(mulheres)):
-    print(mulheres[i],end=' ')
 print()
-print('D) Lista das pessoas que estão acima da média:')
-for i in acimaMedia:
-    print(f'   nome = {i["nome"]}; sexo = {i["sexo"]}; idade = {i["idade"]};')
-print('<< ENCERRADO >>')
+print('cod ',end='')
+for i in jogador.keys():
+    print(f'{i:<15}',end='')
+print()
+for i, j in enumerate(time):
+    print(f'{i:>3} ',end='')
+    for d in j.values():
+        print(f'{str(d):<15}',end='')
+    print()
+while True:
+    busca = int(input('Mostrar dados de qual jogador? (999 para parar) '))
+    if busca == 999:
+        break
+    if busca >= len(time):
+        print(f'ERRO! Não existe jogador com código {busca}!')
+    else:
+        print(f' -- Levantamento do jogador {time[busca]["nome"]}:')
+        for i, g in enumerate(time[busca]['gols']):
+            print(f'   No jogo {i+1} fez {g} gols.')
+print('Volte sempre!')
