@@ -23,6 +23,6 @@ Praticar lógica de programação e aprender a organizar melhor o código utiliz
 
 Os exercícios estão organizados por tema para facilitar o estudo.
 
-## 👨‍💻 Autor
+## Autor
 
 Erick de Paiva Alberto
