@@ -19,7 +19,7 @@ Praticar lógica de programação e aprender a organizar melhor o código utiliz
 
 * Python 3
 
-## 📂 Estrutura do repositório
+## Estrutura do repositório
 
 Os exercícios estão organizados por tema para facilitar o estudo.
 
